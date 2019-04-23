@@ -9,6 +9,10 @@ var TaskSchema = new Schema({
         type: String,
         required: 'Please enter a name for your task',
     },
+    user: {
+      type: String,
+      default: 'User',
+    },
     Created_At: {
         type: Date,
         default: Date.now,
