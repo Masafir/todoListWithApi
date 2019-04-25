@@ -8,26 +8,26 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 // Config pour le devServer
 const host = 'localhost';
-const port = 8008;
+const port = 8080;
 const devMode = process.env.NODE_ENV !== 'production';
 
 // Config de Webpack
 module.exports = {
-  // Passe le build par dèfaut en déeveloppement
+  // Passe le build par défaut en développement
   mode: 'development',
-  // Expose le dossier src/ pour les imports
+  // Expose le dossier public/ pour les imports
   resolve: {
     alias: {
-      src: path.resolve(__dirname, 'src/'),
+      src: path.resolve(__dirname, 'public/'),
     },
   },
   // Points d'entrée pour le travail de Webpack
   entry: {
     app: [
       // Styles
-      './src/styles/index.scss',
+      './public/styles/index.scss',
       // JS
-      './src/index.js',
+      './public/index.js',
     ],
   },
   // Sortie
@@ -133,7 +133,7 @@ module.exports = {
   plugins: [
     // Permet de prendre le index.html de src comme base pour le fichier de dist/
     new HtmlWebPackPlugin({
-      template: './src/index.html',
+      template: './public/index.html',
       filename: './index.html',
     }),
     // Permet d'exporter les styles CSS dans un fichier css de dist/
