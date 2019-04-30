@@ -1,7 +1,14 @@
 
 @import 'reset';
-@import 'public/styles/vars';
+@import './vars';
 
 body {
   font-family: sans-serif;
+  background-color: $Background;
+}
+
+#container {
+  margin: 2em;
+  display: flex;
+  justify-content: space-between;
 }

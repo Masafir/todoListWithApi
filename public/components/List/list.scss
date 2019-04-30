@@ -1,0 +1,11 @@
+@import '../../styles/vars';
+
+.list-container {
+    width: 33.33%;
+    height: 60vh;
+}
+.list-name {
+    font-size: 3em;
+    text-transform: capitalize;
+    color: $Second-color;
+}

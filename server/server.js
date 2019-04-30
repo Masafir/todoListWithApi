@@ -8,13 +8,14 @@ var port = process.env.PORT || 3000;
 mongoose = require('mongoose'),
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27018/Tododb', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://localhost:27017/Tododb', { useNewUrlParser: true }); 
 
 tasks = require('./api/models/todoListModel'), //created model loading here
 
 bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+// use both servers
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -24,7 +25,7 @@ app.use(function(req, res, next) {
   
 var routes = require('./api/routes/todoListRoutes'); //importing route
 routes(app); //register the route
-
+ 
 // listen to port define above
 app.listen(port);
 
